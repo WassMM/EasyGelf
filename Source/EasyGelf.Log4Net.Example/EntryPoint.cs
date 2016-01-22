@@ -15,11 +15,24 @@ namespace EasyGelf.Log4Net.Example
             ConfigureLogging();
             var cancelationTokenSource = new CancellationTokenSource();
             Console.CancelKeyPress += (sender, eventArgs) => cancelationTokenSource.Cancel();
-            while (!cancelationTokenSource.IsCancellationRequested)
-            {
-                Log.Info("I'm alive");
-                Thread.Sleep(TimeSpan.FromSeconds(0.5));
-            }
+            //while (!cancelationTokenSource.IsCancellationRequested)
+            //{
+            //    Log.Info("I'm alive. This is the test log for easy gelf");
+            //    Thread.Sleep(TimeSpan.FromSeconds(0.5));
+            //}
+
+			for (int i = 0; i < 10000; i++)
+			{
+				Log.Info("I'm alive. This is the test log for easy gelf i="+i + ". my local time is:"+ DateTime.Now);
+
+		//		To generate windows event here
+		//	   System.Diagnostics.EventLog appLog = new System.Diagnostics.EventLog();
+		//appLog.Source = "Log generator application";
+		//		appLog.WriteEntry("An entry to the Application event log. An entry to the Application event log. An entry to the Application event log.An entry to the Application event log.An entry to the Application event log.An entry to the Application event log. An entry to the Application event log. An entry to the Application event log.An entry to the Application event log.lkjflsdkjflsdkjfsdöfsdfjsldkfjsöldfkjsdölkfjsdölfkjsdlfkjsdölfkjsdölfkjsdöflksdjfölsdkfjsdölkfjsdölkfjsdlökfjsdlökfjsödlkfjsöldkjfsldökjfsdöl" + Environment.NewLine + "ölskdjfljsdöljölsdkjfölsdkjflöksdjfölsdfsdfdsfdjfsdlkjfölskdjfljsdöljölsdkjfölsdkjflöksdjfölsdfsdfdsfdjfsdlkjfölskdjfljsdöljölsdkjfölsdkjflöksdjfölsdfsdfdsfdjfsdlkjfölskdjfljsdöljölsdkjfölsdkjflöksdjfölsdfsdfdsfdjfsdlkjfölskdjfljsdöljölsdkjfölsdkjflöksdjfölsdfsdfdsfdjfsdlkjfölskdjfljsdöljölsdkjfölsdkjflöksdjfölsdfsdfdsfdjfsdlkjfölskdjfljsdöljölsdkjfölsdkjflöksdjfölsdfsdfdsfdjfsdlkjfölskdjfljsdöljölsdkjfölsdkjflöksdjfölsdfsdfdsfdjfsdlkjfölskdjfljsdöljölsdkjfölsdkjflöksdjfölsdfsdfdsfdjfsdlkjfölskdjfljsdöljölsdkjfölsdkjflöksdjfölsdfsdfdsfdjfsdlkjfölskdjfljsdöljölsdkjfölsdkjflöksdjfölsdfsdfdsfdjfsdlkjf");
+
+
+				Thread.Sleep(TimeSpan.FromSeconds(3));
+			}
         }
 
         private static void ConfigureLogging()
