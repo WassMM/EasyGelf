@@ -6,9 +6,10 @@ namespace EasyGelf.Core.Transports
 {
     public sealed class BufferedTransport : ITransport
     {
-        private readonly BlockingCollection<GelfMessage> buffer = new BlockingCollection<GelfMessage>();
+        private static readonly BlockingCollection<GelfMessage> buffer = new BlockingCollection<GelfMessage>();
         private readonly CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
         private readonly ManualResetEvent stopEvent = new ManualResetEvent(false);
+		private static object _sync = new object();
 
         public BufferedTransport(IEasyGelfLogger logger, ITransport transport)
         {
@@ -52,7 +53,10 @@ namespace EasyGelf.Core.Transports
 
         public void Send(GelfMessage message)
         {
-            buffer.Add(message, cancellationTokenSource.Token);
+			lock (_sync)
+			{
+				buffer.Add(message, cancellationTokenSource.Token);
+			}
         }
 
         public void Close()

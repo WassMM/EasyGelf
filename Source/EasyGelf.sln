@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyGelf.Log4Net", "EasyGelf.Log4Net\EasyGelf.Log4Net.csproj", "{5B64942E-7197-4781-909C-E6AA5813AE9D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyGelf.Core", "EasyGelf.Core\EasyGelf.Core.csproj", "{B928D694-5633-4F00-B70F-23F6E5F3A2DB}"
@@ -24,6 +26,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyGelf.NLog", "EasyGelf.NLog\EasyGelf.NLog.csproj", "{A761D25B-60F1-49B4-A5CD-748B57C6513C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyGelf.NLog.Example", "EasyGelf.NLog.Example\EasyGelf.NLog.Example.csproj", "{57F15F34-85CE-4333-B2E3-F9CC7641438C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyGelf.LoadTest", "EasyGelf.LoadTest\EasyGelf.LoadTest.csproj", "{22F5B891-F979-485A-A472-F0A85A7C8247}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +59,10 @@ Global
 		{57F15F34-85CE-4333-B2E3-F9CC7641438C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57F15F34-85CE-4333-B2E3-F9CC7641438C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57F15F34-85CE-4333-B2E3-F9CC7641438C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22F5B891-F979-485A-A472-F0A85A7C8247}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22F5B891-F979-485A-A472-F0A85A7C8247}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22F5B891-F979-485A-A472-F0A85A7C8247}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22F5B891-F979-485A-A472-F0A85A7C8247}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

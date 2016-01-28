@@ -13,6 +13,7 @@ namespace EasyGelf.Core.Transports.Tcp
 		{
 			this.configuration = configuration;
 			this.messageSerializer = messageSerializer;
+			
 		}
 
 
@@ -20,16 +21,17 @@ namespace EasyGelf.Core.Transports.Tcp
 		{
 			try
 			{
-				if (client != null)
+				if (client == null)
 				{
-					if (client.Connected)
-						return;
-					//throw new DisconnectedException();
+					client = new TcpClient();
 				}
-				client = new TcpClient();
 
-				// To connect via remote address, not via IP! The TcpClient does resolve the ip address.
-				client.Connect(configuration.RemoteAddress, configuration.RemotePort);
+				if (!client.Connected)
+				{
+					client = new TcpClient();
+					// To connect via remote address, not via IP! The TcpClient does resolve the ip address.
+					client.Connect(configuration.RemoteAddress, configuration.RemotePort);
+				}
 			}
 			catch (Exception exception)
 			{
@@ -44,12 +46,14 @@ namespace EasyGelf.Core.Transports.Tcp
 		public void Send(GelfMessage message)
 		{
 			EstablishConnection();
-			using (var stream = client.GetStream())
+			var stream = client.GetStream();
 			{
 				var bytes = messageSerializer.Serialize(message);
 				stream.Write(bytes, 0, bytes.Length);
 				stream.WriteByte(0);
 			}
+
+			int a = 1 + 1;
 		}
 
 		public void Close()
