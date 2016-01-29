@@ -53,8 +53,10 @@ namespace EasyGelf.Log4Net
             Verbose = false;
             HostName = Environment.MachineName;
             UseRetry = true;
-            RetryCount = 5;
-            RetryDelay = TimeSpan.FromMilliseconds(50);
+			// TODO: ask Niklas what they want. This is config setting by the way and might be changed in config file.
+			// For the moment its only one. Otherwise with high load blocking collection within sender thread might be grow up. 
+			RetryCount = 1;
+            RetryDelay = TimeSpan.FromMilliseconds(10);
             IncludeStackTrace = true;
             _staticOutFields = new List<StaticOutField>();
         }

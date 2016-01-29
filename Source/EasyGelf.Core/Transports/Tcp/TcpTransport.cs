@@ -28,6 +28,10 @@ namespace EasyGelf.Core.Transports.Tcp
 
 				if (!client.Connected)
 				{
+					// TODO: re-use socket to be able to connect again?
+					// close the current client and re create it.
+					Close();
+
 					client = new TcpClient();
 					// To connect via remote address, not via IP! The TcpClient does resolve the ip address.
 					client.Connect(configuration.RemoteAddress, configuration.RemotePort);
@@ -60,6 +64,13 @@ namespace EasyGelf.Core.Transports.Tcp
 		{
 			if (client == null)
 				return;
+
+			// We don't know if we can get stream here.
+			if (client.Connected)
+			{
+				using (var stream = client.GetStream()) { };
+			}
+
 			client.SafeDispose();
 			client = null;
 		}
