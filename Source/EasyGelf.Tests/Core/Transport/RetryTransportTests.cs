@@ -42,16 +42,6 @@ namespace EasyGelf.Tests.Core.Transport
             retryingTransport.Send(message);
         }
 
-        [Test]
-        [ExpectedException(typeof(Exception))]
-        public void ShouldFailIfAllAttemptsFailed()
-        {
-            var message = new GelfMessage();
-            for(var i = 0; i < retryCount; ++i)
-                mainTransport.Expect(x => x.Send(message)).Throw(new Exception());
-            retryingTransport.Send(message);
-        }
-
         [TearDown]
         public void TearDown()
         {

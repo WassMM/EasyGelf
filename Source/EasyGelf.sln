@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyGelf.NLog.Example", "Ea
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyGelf.LoadTest", "EasyGelf.LoadTest\EasyGelf.LoadTest.csproj", "{22F5B891-F979-485A-A472-F0A85A7C8247}"
 EndProject
+Project("{FF286327-C783-4F7A-AB73-9BCBAD0D4460}") = "RekultEasyGelf", "RekultEasyGelf\RekultEasyGelf.nuproj", "{45F5570C-2E3B-4BD2-9A2B-D1483DE721F9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{22F5B891-F979-485A-A472-F0A85A7C8247}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22F5B891-F979-485A-A472-F0A85A7C8247}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22F5B891-F979-485A-A472-F0A85A7C8247}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45F5570C-2E3B-4BD2-9A2B-D1483DE721F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45F5570C-2E3B-4BD2-9A2B-D1483DE721F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45F5570C-2E3B-4BD2-9A2B-D1483DE721F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45F5570C-2E3B-4BD2-9A2B-D1483DE721F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

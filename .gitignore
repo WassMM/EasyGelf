@@ -50,3 +50,14 @@ packages
 *.nupkg
 Package/EasyGelf.NLog/lib/net40/EasyGelf.NLog.dll
 /Build/Release
+Source/ClassLibrary1/Class1.cs
+Source/ClassLibrary1/ClassLibrary1.xproj
+Source/ClassLibrary1/Properties/AssemblyInfo.cs
+Source/ClassLibrary1/project.json
+Source/ClassLibrary1/project.lock.json
+Source/EasyGelf.LoadTest.psess
+Source/EasyGelf.LoadTest160129.vsp
+Source/Performance1.psess
+Source/RekultEasyGelf/Readme.txt
+Source/RekultEasyGelf/RekultEasyGelf.nuproj
+Source/Report160129.vspx

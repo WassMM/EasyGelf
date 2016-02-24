@@ -23,15 +23,17 @@ namespace EasyGelf.Core.Transports.Amqp
 
         public void Send(GelfMessage message)
         {
-            EstablishConnection();
-            foreach (var bytes in encoder.Encode(messageSerializer.Serialize(message)))
-            {
-                var basicProperties = new BasicProperties
-                    {
-                        DeliveryMode = configuration.Persistent ? (byte)2 : (byte)1
-                    };
-                channel.BasicPublish(configuration.Exchange, configuration.RoutingKey, false, false, basicProperties, bytes);
-            }
+			//EstablishConnection();
+			//foreach (var bytes in encoder.Encode(messageSerializer.Serialize(message)))
+			//{
+			//    var basicProperties = new BasicProperties
+			//        {
+			//            DeliveryMode = configuration.Persistent ? (byte)2 : (byte)1
+			//        };
+			//    channel.BasicPublish(configuration.Exchange, configuration.RoutingKey, false, false, basicProperties, bytes);
+			//}
+
+			throw new NotImplementedException();
         }
 
         public void Close()
